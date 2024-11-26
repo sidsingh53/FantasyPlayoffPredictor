@@ -9,9 +9,18 @@ teams = [
         "points_against": 1243.8, 
         "head_to_head": {
             "Seattle Sickos": 1, 
-            "GoHoos": 2, 
+            "GoHoos": 0, 
             "Raven Lunatics": 1,
-            "Deal Makers": 1
+            "Deal Makers": 1,
+            "Henry": 1,
+            "Trojan Army": 1,
+            "Who here isn't eskimo bros": 0,
+            "Who's Your Daddy": 0,
+            "Diabeto Domination": 1,
+            "Jack the Gripper": 1,
+            "PEPE CARTEL": 1,
+            "Dawg Pound": 1,
+            "Tomlin's Troops": 1
         }
     },
     {
@@ -23,8 +32,17 @@ teams = [
         "head_to_head": {
             "Lakeside Lions": 0, 
             "GoHoos": 1,
-            "Raven Lunatics": 1,
-            "Deal Makers": 1
+            "Raven Lunatics": 0,
+            "Deal Makers": 0,
+            "Henry": 1,
+            "Trojan Army": 1,
+            "Who here isn't eskimo bros": 0,
+            "Who's Your Daddy": 1,
+            "Diabeto Domination": 1,
+            "Jack the Gripper": 0,
+            "PEPE CARTEL": 1,
+            "Dawg Pound": 0,
+            "Tomlin's Troops": 1
         }
     },
     {
@@ -36,8 +54,17 @@ teams = [
         "head_to_head": {
             "Lakeside Lions": 1, 
             "Seattle Sickos": 0,
-            "Raven Lunatics": 1,
-            "Deal Makers": 0
+            "Raven Lunatics": 0,
+            "Deal Makers": 1,
+            "Henry": 1,
+            "Trojan Army": 1,
+            "Who here isn't eskimo bros": 0,
+            "Who's Your Daddy": 1,
+            "Diabeto Domination": 1,
+            "Jack the Gripper": 0,
+            "PEPE CARTEL": 1,
+            "Dawg Pound": 0,
+            "Tomlin's Troops": 0
         }
     },
     {
@@ -48,11 +75,21 @@ teams = [
         "points_against": 1308.98, 
         "head_to_head": {
             "Lakeside Lions": 0, 
-            "Seattle Sickos": 0, 
+            "Seattle Sickos": 1, 
             "GoHoos": 1,
-            "Deal Makers": 1
+            "Deal Makers": 0,
+            "Henry": 1,
+            "Trojan Army": 0,
+            "Who here isn't eskimo bros": 1,
+            "Who's Your Daddy": 0,
+            "Diabeto Domination": 0,
+            "Jack the Gripper": 1,
+            "PEPE CARTEL": 1,
+            "Dawg Pound": 1,
+            "Tomlin's Troops": 0
         }
     },
+    #finished at raven lunatics need to start here next
     {
         "name": "Deal Makers", 
         "wins": 6, 
@@ -63,7 +100,16 @@ teams = [
             "Lakeside Lions": 0, 
             "Seattle Sickos": 0, 
             "GoHoos": 1,
-            "Raven Lunatics": 0
+            "Raven Lunatics": 0,
+            "Henry": 0,
+            "Trojan Army": 1,
+            "Who here isn't eskimo bros": 0,
+            "Who's Your Daddy": 1,
+            "Diabeto Domination": 0,
+            "Jack the Gripper": 1,
+            "PEPE CARTEL": 0,
+            "Dawg Pound": 0,
+            "Tomlin's Troops": 1
         }
     },
     {
@@ -76,7 +122,16 @@ teams = [
             "Lakeside Lions": 1, 
             "Seattle Sickos": 1, 
             "GoHoos": 0, 
-            "Raven Lunatics": 1
+            "Raven Lunatics": 1,
+            "Deal Makers": 0,
+            "Trojan Army": 1,
+            "Who here isn't eskimo bros": 0,
+            "Who's Your Daddy": 1,
+            "Diabeto Domination": 0,
+            "Jack the Gripper": 1,
+            "PEPE CARTEL": 0,
+            "Dawg Pound": 1,
+            "Tomlin's Troops": 0
         }
     },
     {
@@ -89,7 +144,16 @@ teams = [
             "Lakeside Lions": 0, 
             "Seattle Sickos": 1,
             "GoHoos": 1,
-            "Deal Makers": 1
+            "Deal Makers": 1,
+            "Henry": 0,
+            "Raven Lunatics": 0,
+            "Who here isn't eskimo bros": 1,
+            "Who's Your Daddy": 1,
+            "Diabeto Domination": 1,
+            "Jack the Gripper": 1,
+            "PEPE CARTEL": 0,
+            "Dawg Pound": 1,
+            "Tomlin's Troops": 1
         }
     },
     {
@@ -102,7 +166,16 @@ teams = [
             "Lakeside Lions": 0, 
             "Seattle Sickos": 1,
             "GoHoos": 0, 
-            "Raven Lunatics": 1
+            "Raven Lunatics": 1,
+            "Deal Makers": 1,
+            "Henry": 1,
+            "Trojan Army": 0,
+            "Who's Your Daddy": 1,
+            "Diabeto Domination": 1,
+            "Jack the Gripper": 0,
+            "PEPE CARTEL": 1,
+            "Dawg Pound": 1,
+            "Tomlin's Troops": 1
         }
     },
     {
@@ -115,7 +188,16 @@ teams = [
             "Lakeside Lions": 0, 
             "Seattle Sickos": 1, 
             "GoHoos": 1, 
-            "Deal Makers": 1
+            "Deal Makers": 1,
+            "Raven Lunatics": 1,
+            "Henry": 0,
+            "Trojan Army": 1,
+            "Who here isn't eskimo bros": 0,
+            "Diabeto Domination": 0,
+            "Jack the Gripper": 1,
+            "PEPE CARTEL": 1,
+            "Dawg Pound": 1,
+            "Tomlin's Troops": 0
         }
     },
     {
@@ -128,10 +210,19 @@ teams = [
             "Lakeside Lions": 0, 
             "Seattle Sickos": 1, 
             "GoHoos": 0, 
-            "Raven Lunatics": 0
+            "Raven Lunatics": 0,
+            "Deal Makers": 1,
+            "Henry": 1,
+            "Trojan Army": 1,
+            "Who here isn't eskimo bros": 1,
+            "Who's Your Daddy": 1,
+            "Jack the Gripper": 0,
+            "PEPE CARTEL": 1,
+            "Dawg Pound": 1,
+            "Tomlin's Troops": 1
         }
     },
-    {
+      {
         "name": "Jack the Gripper", 
         "wins": 6, 
         "losses": 6, 
@@ -141,7 +232,16 @@ teams = [
             "Lakeside Lions": 1, 
             "Seattle Sickos": 0, 
             "GoHoos": 0, 
-            "Deal Makers": 1
+            "Deal Makers": 1,
+            "Raven Lunatics": 1,
+            "Henry": 1,
+            "Trojan Army": 1,
+            "Who here isn't eskimo bros": 1,
+            "Who's Your Daddy": 0,
+            "Diabeto Domination": 1,
+            "PEPE CARTEL": 1,
+            "Dawg Pound": 0,
+            "Tomlin's Troops": 1
         }
     },
     {
@@ -154,7 +254,16 @@ teams = [
             "Lakeside Lions": 0, 
             "Seattle Sickos": 1, 
             "GoHoos": 0, 
-            "Raven Lunatics": 1
+            "Raven Lunatics": 1,
+            "Deal Makers": 1,
+            "Henry": 1,
+            "Trojan Army": 1,
+            "Who here isn't eskimo bros": 0,
+            "Who's Your Daddy": 0,
+            "Diabeto Domination": 0,
+            "Jack the Gripper": 0,
+            "Dawg Pound": 0,
+            "Tomlin's Troops": 0
         }
     },
     {
@@ -167,7 +276,16 @@ teams = [
             "Lakeside Lions": 0, 
             "Seattle Sickos": 0, 
             "GoHoos": 1, 
-            "Deal Makers": 0
+            "Deal Makers": 0,
+            "Raven Lunatics": 0,
+            "Henry": 1,
+            "Trojan Army": 0,
+            "Who here isn't eskimo bros": 0,
+            "Who's Your Daddy": 0,
+            "Diabeto Domination": 0,
+            "Jack the Gripper": 1,
+            "PEPE CARTEL": 1,
+            "Tomlin's Troops": 0
         }
     },
     {
@@ -180,7 +298,16 @@ teams = [
             "Lakeside Lions": 1, 
             "Seattle Sickos": 0, 
             "GoHoos": 1, 
-            "Raven Lunatics": 1
+            "Raven Lunatics": 1,
+            "Deal Makers": 1,
+            "Henry": 0,
+            "Trojan Army": 0,
+            "Who here isn't eskimo bros": 1,
+            "Who's Your Daddy": 1,
+            "Diabeto Domination": 1,
+            "Jack the Gripper": 0,
+            "PEPE CARTEL": 1,
+            "Dawg Pound": 1
         }
     }
 ]
