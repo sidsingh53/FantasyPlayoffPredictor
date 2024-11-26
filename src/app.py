@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from teams import teams, matchups_week_13, matchups_week_14  # Import teams and matchups
+from teams import get_teams_copy, matchups_week_13, matchups_week_14  # Import teams and matchups
 
 app = Flask(__name__)
 
@@ -28,8 +28,8 @@ def index():
         for week, matchups in [('week_1', matchups_week_13), ('week_2', matchups_week_14)]:
             for idx, (team1, team2) in enumerate(matchups):
                 winner_name = request.form[f'winner_{week}_{idx}']
-                winner = next(team for team in teams if team['name'] == winner_name)
-                loser = next(team for team in teams if team['name'] == (team1 if winner['name'] == team2 else team2))
+                winner = next(team for team in get_teams_copy() if team['name'] == winner_name)
+                loser = next(team for team in get_teams_copy() if team['name'] == (team1 if winner['name'] == team2 else team2))
 
                 # Update the teams' wins and losses
                 winner['wins'] += 1
@@ -45,8 +45,10 @@ def index():
 
         return redirect(url_for('index'))  # Refresh page with updated standings
 
-    # Sort the teams based on wins, losses, and points_for
-    sorted_teams = sorted(teams, key=lambda x: (-x['wins'], x['losses'], -x['points_for']))
+    # Get a fresh copy of the teams and sort them
+    teams_copy = get_teams_copy()
+    sorted_teams = sorted(teams_copy, key=lambda x: (-x['wins'], x['losses'], -x['points_for']))
+    
     return render_template('index.html', teams=sorted_teams, matchups_week_13=matchups_week_13, matchups_week_14=matchups_week_14)
 
 if __name__ == '__main__':

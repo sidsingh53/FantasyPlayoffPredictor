@@ -1,4 +1,5 @@
 # teams.py
+import copy
 
 teams = [
     {
@@ -332,3 +333,7 @@ matchups_week_14 = [
     ("Jack the Gripper", "Deal Makers"),
     ("Tomlin's Troops", "Trojan Army")
 ]
+
+# Function to return a deep copy of the teams structure
+def get_teams_copy():
+    return copy.deepcopy(teams)
