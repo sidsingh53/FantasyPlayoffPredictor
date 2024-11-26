@@ -1,45 +1,25 @@
 from flask import Flask, render_template, request, redirect, url_for
+from teams import teams, matchups_week_13, matchups_week_14  # Import teams and matchups
 
 app = Flask(__name__)
 
-# Sample data for standings using team names as strings
-teams = [
-    {"name": "Lakeside Lions", "wins": 10, "losses": 2, "points_for": 1594.96, "points_against": 1243.8, "head_to_head": {}},
-    {"name": "Seattle Sickos", "wins": 7, "losses": 5, "points_for": 1383.9, "points_against": 1328.8, "head_to_head": {}},
-    {"name": "GoHoos", "wins": 8, "losses": 4, "points_for": 1537.52, "points_against": 1412.12, "head_to_head": {}},
-    {"name": "Raven Lunatics", "wins": 7, "losses": 5, "points_for": 1450.52, "points_against": 1308.98, "head_to_head": {}},
-    {"name": "Deal Makers", "wins": 6, "losses": 6, "points_for": 1363.46, "points_against": 1191.94, "head_to_head": {}},
-    {"name": "Henry", "wins": 6, "losses": 6, "points_for": 1252.72, "points_against": 1442.72, "head_to_head": {}},
-    {"name": "Trojan Army", "wins": 7, "losses": 5, "points_for": 1246.62, "points_against": 1315.44, "head_to_head": {}},
-    {"name": "Who here isn't eskimo bros", "wins": 6, "losses": 6, "points_for": 1406.6, "points_against": 1331.58, "head_to_head": {}},
-    {"name": "Who's Your Daddy", "wins": 6, "losses": 6, "points_for": 1326.5, "points_against": 1308.6, "head_to_head": {}},
-    {"name": "Diabeto Domination", "wins": 5, "losses": 7, "points_for": 1302.38, "points_against": 1402.12, "head_to_head": {}},
-    {"name": "Jack the Gripper", "wins": 6, "losses": 6, "points_for": 1373.84, "points_against": 1278.66, "head_to_head": {}},
-    {"name": "PEPE CARTEL", "wins": 3, "losses": 9, "points_for": 1281.86, "points_against": 1463.9, "head_to_head": {}},
-    {"name": "Dawg Pound", "wins": 4, "losses": 8, "points_for": 1134.44, "points_against": 1332.72, "head_to_head": {}},
-    {"name": "Tomlin's Troops", "wins": 3, "losses": 9, "points_for": 1255.84, "points_against": 1425.56, "head_to_head": {}}
-]
-
-# Hardcoded matchups for the next two weeks
-matchups_week_13 = [
-    ("Dawg Pound", "Seattle Sickos"),
-    ("Trojan Army", "Raven Lunatics"),
-    ("Deal Makers", "Diabeto Domination"),
-    ("Henry", "Who here isn't eskimo bros"),
-    ("Who's Your Daddy", "Lakeside Lions"),
-    ("Jack the Gripper", "GoHoos"),
-    ("PEPE CARTEL", "Tomlin's Troops")
-]
-
-matchups_week_14 = [
-    ("Henry", "GoHoos"),
-    ("Seattle Sickos", "Dawg Pound"),
-    ("Raven Lunatics", "Who here isn't eskimo bros"),
-    ("PEPE CARTEL", "Who's Your Daddy"),
-    ("Lakeside Lions", "Diabeto Domination"),
-    ("Jack the Gripper", "Deal Makers"),
-    ("Tomlin's Troops", "Trojan Army")
-]
+# Tie-breaking function
+def compare_teams(team1, team2):
+    # First tie-breaker: head-to-head result
+    if team2['name'] in team1['head_to_head'] and team1['name'] in team2['head_to_head']:
+        if team1['head_to_head'][team2['name']] > team2['head_to_head'][team1['name']]:
+            return -1  # team1 wins head-to-head, so it should come first
+        elif team1['head_to_head'][team2['name']] < team2['head_to_head'][team1['name']]:
+            return 1  # team2 wins head-to-head, so it should come first
+    
+    # Second tie-breaker: points-for (PF)
+    if team1['points_for'] > team2['points_for']:
+        return -1
+    elif team1['points_for'] < team2['points_for']:
+        return 1
+    
+    # If both tie-breakers are the same, rank them as equal
+    return 0
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

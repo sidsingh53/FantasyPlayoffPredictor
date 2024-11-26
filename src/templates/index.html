@@ -2,16 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fantasy Football Standings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer Trail Fantasy Football Standings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .matchup {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .matchup label {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Fantasy Football Standings</h1>
+    <h1>Beer Trail Fantasy Football Standings</h1>
 
     <!-- Display the Standings Table -->
-    <table border="1">
+    <h2>Standings</h2>
+    <table>
         <thead>
             <tr>
-                <th>Team</th>
+                <th>Team Name</th>
                 <th>Wins</th>
                 <th>Losses</th>
                 <th>Points For</th>
@@ -21,41 +54,41 @@
         <tbody>
             {% for team in teams %}
             <tr>
-                <td>{{ team['name'] }}</td>
-                <td>{{ team['wins'] }}</td>
-                <td>{{ team['losses'] }}</td>
-                <td>{{ team['points_for'] }}</td>
-                <td>{{ team['points_against'] }}</td>
+                <td>{{ team.name }}</td>
+                <td>{{ team.wins }}</td>
+                <td>{{ team.losses }}</td>
+                <td>{{ team.points_for }}</td>
+                <td>{{ team.points_against }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 
-    <h2>Pick Matchups</h2>
+    <!-- Matchups for Week 13 -->
+    <h2>Week 13 Matchups</h2>
     <form method="POST">
-        <h3>Week 12 Matchups</h3>
-        {% for match in matchups_week_13 %}
-            <p>
-                <label>{{ match[0] }} vs {{ match[1] }}</label>
-                <select name="winner_week_1_{{ loop.index0 }}">
-                    <option value="{{ match[0] }}">{{ match[0] }}</option>
-                    <option value="{{ match[1] }}">{{ match[1] }}</option>
-                </select>
-            </p>
+        {% for team1, team2 in matchups_week_13 %}
+        <div class="matchup">
+            <label>{{ team1 }} vs {{ team2 }}:</label>
+            <select name="winner_week_1_{{ loop.index0 }}">
+                <option value="{{ team1 }}">{{ team1 }}</option>
+                <option value="{{ team2 }}">{{ team2 }}</option>
+            </select>
+        </div>
         {% endfor %}
-
-        <h3>Week 13 Matchups</h3>
-        {% for match in matchups_week_14 %}
-            <p>
-                <label>{{ match[0] }} vs {{ match[1] }}</label>
-                <select name="winner_week_2_{{ loop.index0 }}">
-                    <option value="{{ match[0] }}">{{ match[0] }}</option>
-                    <option value="{{ match[1] }}">{{ match[1] }}</option>
-                </select>
-            </p>
+        
+        <h2>Week 14 Matchups</h2>
+        {% for team1, team2 in matchups_week_14 %}
+        <div class="matchup">
+            <label>{{ team1 }} vs {{ team2 }}:</label>
+            <select name="winner_week_2_{{ loop.index0 }}">
+                <option value="{{ team1 }}">{{ team1 }}</option>
+                <option value="{{ team2 }}">{{ team2 }}</option>
+            </select>
+        </div>
         {% endfor %}
-
-        <button type="submit">Update Standings</button>
+        
+        <button type="submit">Submit Results</button>
     </form>
 </body>
 </html>
