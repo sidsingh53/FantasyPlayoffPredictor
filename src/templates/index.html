@@ -34,6 +34,10 @@
         .matchup label {
             margin-right: 10px;
         }
+        select {
+            padding: 5px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -71,6 +75,7 @@
         <div class="matchup">
             <label>{{ team1 }} vs {{ team2 }}:</label>
             <select name="winner_week_1_{{ loop.index0 }}">
+                <option value="" disabled selected>Select a winner</option>
                 <option value="{{ team1 }}">{{ team1 }}</option>
                 <option value="{{ team2 }}">{{ team2 }}</option>
             </select>
@@ -82,6 +87,7 @@
         <div class="matchup">
             <label>{{ team1 }} vs {{ team2 }}:</label>
             <select name="winner_week_2_{{ loop.index0 }}">
+                <option value="" disabled selected>Select a winner</option>
                 <option value="{{ team1 }}">{{ team1 }}</option>
                 <option value="{{ team2 }}">{{ team2 }}</option>
             </select>
