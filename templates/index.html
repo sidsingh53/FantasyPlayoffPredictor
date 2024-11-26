@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fantasy Football Standings</title>
+</head>
+<body>
+    <h1>Fantasy Football Standings</h1>
+
+    <!-- Display the Standings Table -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Points For</th>
+                <th>Points Against</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in teams %}
+            <tr>
+                <td>{{ team['name'] }}</td>
+                <td>{{ team['wins'] }}</td>
+                <td>{{ team['losses'] }}</td>
+                <td>{{ team['points_for'] }}</td>
+                <td>{{ team['points_against'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Pick Matchups</h2>
+    <form method="POST">
+        <h3>Week 12 Matchups</h3>
+        {% for match in matchups_week_13 %}
+            <p>
+                <label>{{ match[0] }} vs {{ match[1] }}</label>
+                <select name="winner_week_1_{{ loop.index0 }}">
+                    <option value="{{ match[0] }}">{{ match[0] }}</option>
+                    <option value="{{ match[1] }}">{{ match[1] }}</option>
+                </select>
+            </p>
+        {% endfor %}
+
+        <h3>Week 13 Matchups</h3>
+        {% for match in matchups_week_14 %}
+            <p>
+                <label>{{ match[0] }} vs {{ match[1] }}</label>
+                <select name="winner_week_2_{{ loop.index0 }}">
+                    <option value="{{ match[0] }}">{{ match[0] }}</option>
+                    <option value="{{ match[1] }}">{{ match[1] }}</option>
+                </select>
+            </p>
+        {% endfor %}
+
+        <button type="submit">Update Standings</button>
+    </form>
+</body>
+</html>
